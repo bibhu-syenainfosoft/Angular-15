@@ -1,0 +1,105 @@
+1. Declarative Control Flow Syntax:
+   ================================
+
+i) @if replaces *ngIf
+   
+old: <div *ngIf="isLoggedIn">Welcome back!</div>
+new:
+   @if (status === 'success') {
+  <p>Success!</p>
+} @else if (status === 'loading') {
+  <p>Loading...</p>
+} @else {
+  <p>Error occurred.</p>
+}
+
+ii) @for replaces *ngFor
+Ex-1: @for (fruit of fruits; track fruit) {
+      <div>{{ fruit }}</div>
+}
+
+Ex-2: @for (task of tasks; let i = $index; track task) {
+      <li>{{ i + 1 }}. {{ task }}</li>
+      }
+      @empty {
+      <p>No items Available</>
+      }
+
+
+@switch replaces *ngSwitch​
+
+old:
+<div [ngSwitch]="status">
+  <div *ngSwitchCase="'success'">Success!</div>
+  <div *ngSwitchCase="'error'">Error!</div>
+  <div *ngSwitchDefault>Loading...</div>
+</div>
+
+new:
+@switch (status) {
+  @case ('success') {
+    <div>Success!</div>
+  }
+  @case ('error') {
+    <div>Error!</div>
+  }
+  @default {
+    <div>Loading...</div>
+  }
+}
+
+Note: 
+i)  It improves readability, reduces the bundle size, bettwe performance, enhances developers experience.
+ii) <ul>
+       <li *ngFor="let val of nums">{{val}}</li>
+    </ul>
+
+Here its better to use *ngFor inside <li> but not use inside <ul>, It will reduce the performance.
+iii) We cannot use 2 structural directive in a single tag.
+iv)  We can migrate our old control syntax to new syntaxes throuh the below command.
+     > ng g @angular/core:control-flow
+     ? Which path in your project should be migrated?. ./     //It means entire project, we can provide some specific paths.
+     ? Should the migration reformat your template? Yes
+
+
+
+
+2. Standalone Component
+   ====================
+*  When we are bootstrapping the app module the other components, 3rd party libraries inside app module got downloaded when the application startes, then comes Standalone components to solve this problem and in standalone component app module got removed.
+
+*  After the standalone component we have component level optimization i.e if we want to load only dashboard module then all the components inside dasboard module got loaded. suppose there are 2 to 3 components inside dasboard module line by line but in the view 2 components will be shown but when the user will scroll the page at that time the other components will be loaded but not at the start time. so we can lazy load the other components, at that time DEFERRABLE VIEWS compes into picture.
+
+
+
+3. Deferrable Views with @defer
+   ============================
+*  Before when we are starting the application all the components that are downloaded which increases the loading time. Through the lazy-loading we are spliting the entire application into modules, So this lazy-loading the required module will be downloaded which reduces the initial loading time of the application.
+
+*  The @defer directive is a template syntax that allows to defer loading the specific parts of our application whenever they are really needed.	
+
+*  The @defer will work only on standalone component if we will use it inside a non standalone component then it will load the component eagerly.
+Ex:
+   @defer(){
+    <compo1>  //lazy loading
+   }
+   <compo1>   //eager loading 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
