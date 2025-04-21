@@ -1,0 +1,107 @@
+TYPESCRIPT QUESTIONS
+====================
+1.  What is Angular.
+2.  What are the challenges in modern web development.
+3.  What are the problems with JS & jQuery.
+4.  Why we need Angular.
+5.  What is difference between Angular and Angular JS.
+6.  What is difference between React and Angular.
+7.  What are the Issues with Object Oriented Programming.
+8.  What are the issues with JavaScript.
+9.  What is typescript.
+10. Define Typescript Architecture and define its core components.
+11. What is Captcha and Editor.
+12. What is Package manager.
+13. Which command is used to check node js version.
+14. What is the command for downloading typescript and checking the typescript version.
+15. Which command is used to download package.json and what the package.json contains.
+16. What tsconfig.json file contains and what is the command to download it.
+17. Inside typescript project public,src,index.html what it contains.
+
+
+LANGUAGE BASICS
+===============
+1.  What is the command to convert typescript into javascript.
+2.  What is the command to execute javascript file to get the output.
+
+Variables:
+----------
+3.  What is Variable.
+4.  Variable comprises how many parts.
+5.  How many types of variable are there in typescript.
+6.  What is shadowing and hoisting.
+7.  What are the differences between Let,Var and Const.
+
+Data Types:
+-----------
+8.  What is Data types.
+9.  How many types of data types are there in typecript.
+10. Which operator is known as instance operator and whih operator is known as invoke operator.
+11. What is type inference.
+12. What is the nature of primitive data types and how many primitive data types are there.
+13. How many possible types of number data types values are there.
+14. Which method is used to determine whether the data type is number or not.
+15. What are the methods are there to convert string into number/float.
+16. Which variable is required to find out the maximum and minimum range of number data type. 
+17. In how many ways we can define string literals.
+18. Which format of string is required for embedded data binding expression.
+19. What are the string formatting and string manipulation methods are there in TS.
+
+Note: 
+let str = "A";
+console.log(str.charCodeAt(0));  // 65
+let str = "TypeScript";
+console.log(str.slice(0, 4));
+let str = "TypeScript";
+console.log(str.substr(4, 6));  // "Script"
+let str = "TypeScript";
+console.log(str.substring(4, 10));  // "Script"
+let str = "apple,banana,grape";
+console.log(str.split(","));  // ["apple", "banana", "grape"]
+
+20. Does typescript supports true is equal to 1 and false is equal to 0.
+21. What is Union of types.
+22. What is Null and Undefined.
+23. var username:string;
+    console.log(username);  // It is a valid statement or invalid statement.
+24. var username: string| undefined = undefined   // It is a valid statement or invalid statement.
+25. What is the nature of non-primitive types.
+26. how many types of non-primitive data types are there.
+27. What are the differences between primitive and non-primitive data types.
+
+28. What is the technical definition of an Array.
+29. What is overhead and complexity.
+30. How an array reduces the overhead and complexity.
+31. In how many ways we can Initialize and assign the memory of an array.
+32. What is difference between array [ ] and Array().
+33. What is a Tuple.
+34. What is array de-structuring.
+35. What type of values we can store in an Array.
+36. 
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
