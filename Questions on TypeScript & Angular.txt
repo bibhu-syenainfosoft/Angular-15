@@ -1,5 +1,6 @@
-TYPESCRIPT QUESTIONS
-====================
+@*@*@ TYPESCRIPT QUESTIONS @*@*@
+      ====================
+
 1.  What is Angular.
 2.  What are the challenges in modern web development.
 3.  What are the problems with JS & jQuery.
@@ -8,7 +9,7 @@ TYPESCRIPT QUESTIONS
 6.  What is difference between React and Angular.
 7.  What are the Issues with Object Oriented Programming.
 8.  What are the issues with JavaScript.
-9.  What is typescript.
+9.  What is Typescript.
 10. Define Typescript Architecture and define its core components.
 11. What is Captcha and Editor.
 12. What is Package manager.
@@ -16,27 +17,32 @@ TYPESCRIPT QUESTIONS
 14. What is the command for downloading typescript and checking the typescript version.
 15. Which command is used to download package.json and what the package.json contains.
 16. What tsconfig.json file contains and what is the command to download it.
-17. Inside typescript project public,src,index.html what it contains.
+17. Inside typescript project public, src, index.html what it contains.
 
 
-LANGUAGE BASICS
-===============
+
+** TYPESCRIPT LANGUAGE BASICS**
+   ==========================
 1.  What is the command to convert typescript into javascript.
 2.  What is the command to execute javascript file to get the output.
 
-Variables:
-----------
+
+
+**TYPESCRIPT VARIABLES**
+  ====================
 3.  What is Variable.
 4.  Variable comprises how many parts.
 5.  How many types of variable are there in typescript.
 6.  What is shadowing and hoisting.
 7.  What are the differences between Let,Var and Const.
 
-Data Types:
------------
+
+
+**TYPESCRIPT DATA TYPES**
+  =====================
 8.  What is Data types.
 9.  How many types of data types are there in typecript.
-10. Which operator is known as instance operator and whih operator is known as invoke operator.
+10. Which operator is known as instance operator and which operator is known as invoke operator.
 11. What is type inference.
 12. What is the nature of primitive data types and how many primitive data types are there.
 13. How many possible types of number data types values are there.
@@ -69,15 +75,424 @@ console.log(str.split(","));  // ["apple", "banana", "grape"]
 26. how many types of non-primitive data types are there.
 27. What are the differences between primitive and non-primitive data types.
 
+Typescript Array
+================
 28. What is the technical definition of an Array.
 29. What is overhead and complexity.
 30. How an array reduces the overhead and complexity.
 31. In how many ways we can Initialize and assign the memory of an array.
-32. What is difference between array [ ] and Array().
+32. What is difference between array [] and Array().
 33. What is a Tuple.
 34. What is array de-structuring.
 35. What type of values we can store in an Array.
-36. 
+Note: The values cannot be stored in an array if the array is not initialized/rendered into the memory.
+
+Using Meta Character:
+--------------------
+ Ex:
+ let products:string[] = [];   // Initialization 
+ products[0] = "TV";
+ products[1] = "Mobile";
+ console.log(products.toString());
+ Ex:
+ let products:string[];
+ products = [];      //rendering
+ products[0] = "TV";
+ products[1] = "Mobile";
+ console.log(products.toString());
+
+ Using Array Constructor:
+-------------------------
+ Ex:
+ let products:string[] = new Array();
+ products[0] = "TV";
+ products[1] = "Mobile";
+ console.log(products.toString());
+ Ex:
+ let products:string[];
+ products = Array();
+ products[0] = "Samsung TV";
+ products[1] = "Mobile";
+ console.log(products.toString());
+* new is dynamic memory allocating operator.
+
+Array Manipulation Methods
+--------------------------
+1. Returns a shallow copy of a portion of an array.
+   let nums = [1, 2, 3, 4, 5];
+   console.log(nums.slice(1, 4));  // [2, 3, 4]
+
+2. Returns the first element that matches the condition.
+   let nums = [10, 20, 30, 40];
+   let result = nums.find(n => n > 25);
+   console.log(result);  // 30
+
+3. Returns all elements that match the condition.
+   let nums = [10, 20, 30, 40];
+   let result = nums.filter(n => n > 25);
+   console.log(result);  // [30, 40]
+
+4. Transforms every element and returns a new array.
+   let nums = [1, 2, 3];
+   let result = nums.map(n => n * 2);
+   console.log(result);  // [2, 4, 6]
+
+5. Adds one or more elements to the end of the array.
+   let fruits = ["apple", "banana"];
+   fruits.push("cherry");
+   console.log(fruits);  // ["apple", "banana", "cherry"]
+
+6. Removes the last element and returns it.
+   let fruits = ["apple", "banana", "cherry"];
+   let last = fruits.pop();
+   console.log(last);    // "cherry"
+   console.log(fruits);  // ["apple", "banana"]
+
+7. Removes the first element and returns it.
+   let fruits = ["apple", "banana", "cherry"];
+   let first = fruits.shift();
+   console.log(first);   // "apple"
+   console.log(fruits);  // ["banana", "cherry"]
+
+8. Adds one or more elements to the beginning of the array.
+   let fruits = ["banana", "cherry"];
+   fruits.unshift("apple");
+   console.log(fruits);  // ["apple", "banana", "cherry"]
+
+9. Executes a reducer function on each element, resulting in a single output value.
+   let numbers = [1, 2, 3, 4, 5];
+   let sum = numbers.reduce((acc, curr) => acc + curr, 0);
+   console.log(sum);  // 15
+
+10.array.splice(startIndex, deleteCount, item1?, item2?, ...)
+   startIndex	The index at which to start changing the array
+   deleteCount	Number of elements to remove
+   item1...     (Optional) Items to insert at startIndex
+i. Remove elements
+   let arr = [1, 2, 3, 4, 5];
+   let removed = arr.splice(1, 2);  // Remove 2 elements from index 1
+   console.log(removed);  // [2, 3]
+   console.log(arr);      // [1, 4, 5]
+ii.Insert elements
+   let arr = [1, 4, 5];
+   arr.splice(1, 0, 2, 3);  // Insert 2 and 3 at index 1, delete 0
+   console.log(arr);       // [1, 2, 3, 4, 5]
+iii.Replace elements
+   let arr = [1, 2, 3, 4, 5];
+   arr.splice(2, 2, 99, 100);  // Remove 2 elements from index 2, add 99, 100
+   console.log(arr);  // [1, 2, 99, 100, 5]
+iv.Remove all from a point
+   let arr = [1, 2, 3, 4, 5];
+   arr.splice(3);  // Removes everything from index 3 onward
+   console.log(arr);  // [1, 2, 3]
+
+11.Default Behavior
+   Sorts elements as strings in ascending order.
+   let arr = [30, 4, 21, 100];
+   arr.sort();
+   console.log(arr);  // [100, 21, 30, 4] ❌ (wrong for numbers)
+i. arr.sort((a, b) => a - b);  // Ascending
+   console.log(arr);  // [4, 21, 30, 100]
+   arr.sort((a, b) => b - a);  // Descending
+   console.log(arr);  // [100, 30, 21, 4]
+ii.let fruits = ["banana", "apple", "cherry"];
+   fruits.sort();
+   console.log(fruits);  // ["apple", "banana", "cherry"]
+
+12.let nums = [1, 2, 3];
+   nums.reverse();
+   console.log(nums);  // [3, 2, 1]
+i. let names = ["Zara", "John", "Alex"];
+   names.sort().reverse();  // Descending alphabetical
+   console.log(names);  // ["Zara", "John", "Alex"]
+
+36. In array how readonly prevents the changes of an array.
+
+Typescript Object
+=================
+37. What is Object type.
+38. Which character is known as null reference character.
+39. How can we define our object related information insideand outside of the object.
+40. What should be the data type of the string and value.
+
+Typescript Map
+==============
+41. What is Map Type.
+42. What are the differences between Object and Map.
+Ex: 
+   const map = new Map<string, number>();
+   map.set("one", 1);
+   map.set("two", 2);
+   for (let key of myMap.keys()) {
+   console.log(key);  // "one", "two"
+   }
+   for (let value of myMap.values()) {
+   console.log(value);  // 1, 2
+   }
+   console.log(map.get("one"));      // 1
+   console.log(map.has("two"));      // true
+   console.log(map.size);            // 2
+   map.delete("one");
+   for (let [k, v] of map.entries()) {
+   console.log(k, v);
+   }
+
+Typescript Symbol
+=================
+43. What is Symbol type, It is a primitive/non-primitive data type.
+
+
+
+**TYPESCRIPT OPERATORS**
+  ====================
+1.  What are the differences between == and === operator.
+Ans.== checks only value but === checks the value as well as type of the value.
+Ex:
+   console.log(5 == '5');          // true  
+   console.log(null == undefined); // true 
+   console.log(0 == false);        // true  
+
+   console.log(5 === '5');         // false	
+   console.log(null === undefined);// false
+   console.log(0 === false);       // false
+
+
+ 
+
+**TYPESCRIPT FUNCTIONS**
+  ====================
+1.  What is the technical definition of Function.
+2.  What is function declaration, signature and definition.
+3.  How typescript functions are different from a javascript function.
+4.  What is the rule of required and optional parameter.
+
+Typescript Function Parameters
+------------------------------
+Note: 
+i.  DEFAULT PARAMETER
+    function greet(name: string, age: number = 30): void {
+    console.log(`Hello ${name}, age ${age}`);
+   }
+    greet("Bob");  // age = 30
+ii. For unlimited parameters of the same type is called as Rest Parameter.
+    function sum(...numbers: number[]): number {
+    return numbers.reduce((total, n) => total + n, 0);
+   }
+    console.log(sum(1, 2, 3, 4));  // 10
+ii. Function with object parameter is known as destructing.
+    function display({ name, age }: { name: string; age: number }) {
+    console.log(`${name} is ${age}`);
+   }
+    display({ name: "Tom", age: 40 });
+
+Typescript Anonymous Function
+-----------------------------
+i.  Assigned to a Variable
+Ex: const add = function(a: number, b: number): number {
+    return a + b;
+  };
+    console.log(add(2, 3)); // 5
+OR 
+    const multiply = (x: number, y: number): number => x * y;
+    console.log(multiply(4, 5)); // 20
+
+ii. Anonymous Function as Callback
+Ex: let numbers = [1, 2, 3, 4];
+    let squared = numbers.map(function(num: number): number {
+    return num * num;
+   });
+    console.log(squared); // [1, 4, 9, 16]
+OR
+   let squaredArrow = numbers.map(num => num * num);
+
+Typescript Function Return
+--------------------------
+i.  Returning an object
+    function createUser(name: string, age: number): { name: string; age: number } {
+    return { name, age };
+   }
+ii. Returning arrays
+    function getFruits(): string[] {
+    return ["apple", "banana"];
+   }
+iii.Return array function
+    const square = (x: number): number => x * x;
+
+Typescript Function Closure
+---------------------------
+* A closure is a function that remembers the variables of outer scope wven though the outer function completes its execution, it means the inner function can access outer function variables even if i call it later.
+Ex: function Outer(out:string){
+    return function Inner(in:string){
+     console.log(`${out} : ${in}`);
+   }};
+   let val = Outer('Hello');
+   val('World'); // Hello : World
+Ex: function createCounter() {
+   let count = 0;
+   return function () {
+    count++;
+    return count;
+  };
+ }
+   const counter = createCounter();
+   console.log(counter()); // 1
+   console.log(counter()); // 2
+   console.log(counter()); // 3
+*  Closure is used for data encapsulation and maintaining state in callbacks.
+
+Typescript Function Recursion
+-----------------------------
+Ex: function factorial(n:number):number{
+    if(n==0)return 1;           // The condition that stops the recursion.
+    return n * factorial(n-1);  // Where the function calls itself.
+   }
+    console.log(factorial(5)); // Output: 120
+Ex: function fibonacci(n:number):number{
+    if(n<=1)return n;           // The condition that stops the recursion.
+    return fibonacci(n-1) + factorial(n-2);  // Where the function calls itself.
+   }
+    console.log(fibonacci(6)); // Output: 8
+
+ 
+
+**TYPESCRIPT OOPS**
+  ===============  
+1. Real world application development uses how many types of programming system.
+2. Real world application development uses what various programming approaches.
+
+
+
+**TYPESCRIPT CONTRACTS**
+  ====================
+1. What is contracts.
+2. What is the use of optional rules.
+3. What is the use of readonly rules inside a contract.
+4. What is the rule for defining a method inside a contract.
+5. What is the purpose of extending contracts.
+6. What is Backward compatibility.
+7. What is side by side execution.
+8. Does contracts support multilevel and multiple inheritance.
+
+
+
+**TYPESCRIPT CLASS IN OOP**
+  =======================
+1.  What is the technical definition of a class.
+2.  What is Entity and Model.
+3.  Every class contains how many parts.
+4.  Every class contains how many members.
+5.  Can we declare a variable as class member.
+6.  Why variable is not allowed as class member.
+7.  Can we have a variable in class. 
+8.  Can we declare a function as class member.
+9.  Can we have a function in class.
+10. Why static member is used inside a class.
+11. Why non-static member is used inside a class.
+12. What is the difference between static and non static member inside a class.
+Ex:
+ class Demo {
+  static s = 0;    // static property shared by all instances
+  n = 0;           // instance property, unique per object
+
+  constructor() {
+    Demo.s = Demo.s + 1;  // increment shared static variable
+    this.n = this.n + 1;  // increment instance variable (starts at 0)
+  }
+
+  Print() {
+    console.log(`s=${Demo.s} n=${this.n}`);
+  }
+}
+OP: s=1 n=1
+    s=2 n=1
+    s=3 n=1
+Note:
+Demo.s is a static variable → shared by all instances
+this.n is an instance variable → unique to each object
+
+13. What are the access modifiers are there in a class and define each one.
+14. What is the use of property.
+15. Which type of value that a property can store inside a class.
+16. What is accessors and define each one.
+17. What is the use of constructor.
+18. What is singleton class.
+19. If constructor is parameterized when to pass values into constructor.
+20. In typescript can the constructor be overloaded.
+21. In typescript can we have private and static constructors.
+22. How the class is implemented.
+23. Can we define any member additionally in a class which is not configured in contract.
+24. Which type of inheritances is supported in typescript class.
+25. Does it mandatory to call a base class constructor inside of a derieved class constructor.
+26. Why we cannot create an object for an abstract class.
+27. Static uses more or less memory.
+
+
+
+**TYPESCRIPT POLYMERPHISM IN OOP**
+  ==============================
+1. What is polymerphism and what it technically means.
+2. Can a method, function, class memory and object memory be overloaded.
+
+
+
+**TYPESCRIPT TEMPLATES IN OOP**
+  ===========================
+1. What is Template.
+2. How a template can be designed.
+
+
+
+**TYPESCRIPT GENERICS IN OOP**
+  ==========================
+1. What is Generics in Typescript.
+2. What are the things that can be generics in typescript.
+
+
+**TYPESCRIPT ENUM IN OOP**
+  ======================
+1. What is Enum.
+2. How many constants are there in enum.
+3. In enum which constants have the auto implementation.
+4. What is the rules for enum expression return value type.
+5. What is reverse mapping in enum.
+
+
+**TYPESCRIPT MODULES IN OOP**
+  =========================
+1. What is a Module and what it contains.
+2. What are the various module system that javascript uses to handle modules.
+3. If we want to change the current module system in our application then we need to go to which file.
+4. NPM create one module, what is the name of that module.
+5. To access one module outside of any module which keywors is required.
+6. Can there multiple default members inside a module.
+7. Why is the use of default member inside of a module.
+8. What is the rule for importing the default member inside of another module.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
 
   
 
