@@ -574,6 +574,138 @@ const status: Status = 'success'; // valid
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*@*@ ANGULAR QUESTIONS @*@*@
+      =================
+
+**BASIC SETUP QUESTIONS**
+  =====================
+1.  What is CLI.
+2.  What are the commands used to check angular version, install angular, cache verify, uninstall angular and install a specific version of angular.
+3.  What is the use of angular workspace.
+4.  Where the typescript target files are stored in angular project.
+5.  Inside angular workspace what is the meaning of these files,
+  * tsconfig.json
+  * README.md 
+  * package.json 
+  * package-lock.json 
+  * angular.json
+  * .gitignore 
+  * .editorconfig 
+  * node_modules 
+6.  What is the command to generate a new application inside a workspace and what is the command to run a specific angular project.
+7.  What is the default port number to run angular application.
+6.  Inside angular project what is the meaning of these files,
+  * tsconfig.app.json        
+  * tsconfig.spec.json        
+  * src 
+  * src/app 
+  * src/assets
+  * favicon.ico 
+  * index.html 
+  * main.ts
+  * styles.css
+  * src/app/app.module.ts 
+7.  Define angular application architecture.
+8.  What is the angular application flow.
+
+
+
+**ANGULAR COMPONENT**
+  =================
+1.  What is an angular Component.
+2.  Component contains how many parts.
+3.  In how many ways we can create component.
+4.  In how many ways we can design a component structure.
+5.  What is inline documentation.
+6.  What is @Component().
+7.  What is a directive.
+8.  What is the use of selector inside a component.
+9.  Every component must be registered in which section of the app.module.ts file.
+10. The main component we need to declate in which section of app.module.ts file.
+11. index.html should have which component.
+12. After installing bootstrap for our project we need to import it in which file of angular application.
+13. What is the difference between code behind technique and inline documentation for designing a component structure.
+14. In code behind technique and inline documentation which keyword is used to import html and css files.
+15. What is Scaffolding.
+16. What is the CLI command to generate a new component.
+
+
+
+**ANGULAR DATA BINDING**
+  ====================
+1.  What is Data binding.
+2.  How javascript and jQuery handles data binding.
+3.  For data binding angular implicitely uses which frameworks.
+4.  What is MVC and define its architecture.
+5.  What are the types of data binding.
+6.  What is one way data binding.
+7.  What are the various binding technique is there in one way data binding.
+8.  What is interpolation.
+9.  What is property binding.
+10. What is two way data binding.
+11. ngModel is available in which module, to use ngModule in which section what we need to use.
+12. ngModel uses which binding technique and why.
+13. In MVVM design pattern what is the use of model.
+14. In angular how many types of specification are there for services on Web and explain each one.
+15. Javascript provides which method to fetch the data from api.
+
+
+
+**ANGULAR DIRECTIVES**
+  ==================
+1.  What is a Directive.
+2.  In how many ways a directive can be used.
+3.  How many types of directives are there in Angular.
+4.  What is component directive.
+5.  What is the use of structural directive.
+6.  What are the structural directives in angular.
+7.  What is the use of ngIf.
+8.  What is the rule to use structural directive in application.
+9.  What is the syntax for nfIf with alternative block.
+
+Angular Content Projection
+--------------------------
+10. What is Content projection.
+11. What is @ViewChild().
+12. What is the synatx for @ViewChild().
+13. What is the issue in content projection.
+Ans. Slow in rendering, 
+14. Why ngFor is used.
+15. Does ngFor uses for..in.
+16. li  *ngFor="var item of collection">
+    Can we use let here, if Yes/No then why.
+17. What are ngFor properties are there in angular.
+18. 
+
+
+
+
+
+
+
 	
 
 
