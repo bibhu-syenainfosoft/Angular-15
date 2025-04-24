@@ -426,6 +426,11 @@ this.n is an instance variable → unique to each object
 25. Does it mandatory to call a base class constructor inside of a derieved class constructor.
 26. Why we cannot create an object for an abstract class.
 27. Static uses more or less memory.
+28. What is difference between a Variable and Property.
+Ans. Variable is immutable where as Property is mutable.
+28. How to restrict a property from storing new value.
+Ans. Through making it readonly.
+
 
 
 
@@ -474,7 +479,7 @@ this.n is an instance variable → unique to each object
 **ADDITIONAL QUESTIONS FOR INTERVIEW**
   ==================================
 1.  Can you use TypeScript with existing JavaScript code?
-Ans: Yes, in ts file we need to write "allowJs": true inside compilerOptions object.
+Ans: Yes, in tsconfig.json file we need to write "allowJs": true inside compilerOptions object.
 
 2.  Explain readonly vs const in TypeScript?
 Ans: const can be applied only on variables where as readonly only applies on objects, classes, interfaces.
@@ -604,7 +609,7 @@ const status: Status = 'success'; // valid
   =====================
 1.  What is CLI.
 2.  What are the commands used to check angular version, install angular, cache verify, uninstall angular and install a specific version of angular.
-3.  What is the use of angular workspace.
+3.  What is the use of angular workspace what is the CLI command to download it.
 4.  Where the typescript target files are stored in angular project.
 5.  Inside angular workspace what is the meaning of these files,
   * tsconfig.json
@@ -630,6 +635,7 @@ const status: Status = 'success'; // valid
   * src/app/app.module.ts 
 7.  Define angular application architecture.
 8.  What is the angular application flow.
+9.  What is Bootstrapping.
 
 
 
@@ -666,7 +672,7 @@ const status: Status = 'success'; // valid
 8.  What is interpolation.
 9.  What is property binding.
 10. What is two way data binding.
-11. ngModel is available in which module, to use ngModule in which section what we need to use.
+11. What is ngModel and it is available in which module, to use ngModule in which section what we need to use.
 12. ngModel uses which binding technique and why.
 13. In MVVM design pattern what is the use of model.
 14. In angular how many types of specification are there for services on Web and explain each one.
@@ -684,10 +690,7 @@ const status: Status = 'success'; // valid
 6.  What are the structural directives in angular.
 7.  What is the use of ngIf.
 8.  What is the rule to use structural directive in application.
-9.  What is the syntax for nfIf with alternative block.
-
-Angular Content Projection
---------------------------
+9.  What is the syntax for ngIf with alternative block.
 10. What is Content projection.
 11. What is @ViewChild().
 12. What is the synatx for @ViewChild().
@@ -697,9 +700,52 @@ Ans. Slow in rendering,
 15. Does ngFor uses for..in.
 16. li  *ngFor="var item of collection">
     Can we use let here, if Yes/No then why.
-17. What are ngFor properties are there in angular.
-18. 
+17. What are ngFor properties are there in angular and explain each one.
+18. What is the use of Attribute directive.
+19. What are the types of Attribute directive.
+20. What is the use of ngClass.
+21. CSS class is applied to an element in how many ways and explain each way of applying.
+22. What is the use of ngStyle and what is style binding.
 
+
+
+**ANGULAR EVENT BINDING**
+  =====================
+1.  What is the technical definition of Event Binding.
+2.  What is the job of sender and subscriber.
+3.  Angular uses which design pattern.
+4.  Why angular can't use JavaScript events directly.
+5.  What are the events are there in Angular.
+6.  (click)="InsertClick()"  here what is click and InsertClick() calles as.
+7.  What is the default argument of all event handler.
+8.  Angular event handlers use how many arguments.
+9.  When to use keypress and when to use keyup, keydown.
+10. What is the use of custom event.
+11. How the data is sent from parent component to child component.
+12. What is @Input().
+13. Parent component uses which techique to send data to child component.
+14. How the data is sent from child component to parent component.
+15. Why child component uses the custom events.
+
+
+
+**ANGULAR COMPONENT LIFE-CYCLE HOOKS**
+  ==================================
+1.  Define the angular application flow.
+2.  What is Angular Life cycle phase.
+3.  What is Angular Life cycle hook.
+4.  What is component life cycle.
+5.  When a component will be loaded and when it will be destroyed.
+6.  What are the various lifecycle hooks are there, explain each one.
+7.  When the code inside ngOnChanges() executes.
+8.  Changes detected in ngOnChanges() is managed by which object and this object provides how many algorithm.
+9.  When ngOnInit() will be executes.
+10. constructor and ngOnInit() which one is executes 1st.
+11. What is the order of execution of all life cycle hooks.
+12. When ngDoCheck() runs.
+13. When exactly does Angular run change detection.
+Ans. When @Input() values change, On user interactions (clicks, typing, etc.),On timer events (setTimeout, setInterval),On HTTP response
+14. 
 
 
 
