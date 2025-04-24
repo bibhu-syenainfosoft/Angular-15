@@ -744,7 +744,8 @@ Ans. Slow in rendering,
 11. What is the order of execution of all life cycle hooks.
 12. When ngDoCheck() runs.
 13. When exactly does Angular run change detection.
-Ans. When @Input() values change, On user interactions (clicks, typing, etc.),On timer events (setTimeout, setInterval),On HTTP response
+Ans. When @Input() values change, On user interactions (clicks, typing, etc.),On timer events (setTimeout, 
+     setInterval),On HTTP response.
 14. 
 
 
