@@ -713,7 +713,7 @@ Ans. Slow in rendering,
   =====================
 1.  What is the technical definition of Event Binding.
 2.  What is the job of sender and subscriber.
-3.  Angular uses which design pattern.
+3.  Angular uses which design pattern for event binding.
 4.  Why angular can't use JavaScript events directly.
 5.  What are the events are there in Angular.
 6.  (click)="InsertClick()"  here what is click and InsertClick() calles as.
@@ -744,9 +744,42 @@ Ans. Slow in rendering,
 11. What is the order of execution of all life cycle hooks.
 12. When ngDoCheck() runs.
 13. When exactly does Angular run change detection.
-Ans. When @Input() values change, On user interactions (clicks, typing, etc.),On timer events (setTimeout, 
-     setInterval),On HTTP response.
-14. 
+Ans. When @Input() values change, On user interactions (clicks, typing, etc.),On timer events (setTimeout,setInterval),On HTTP response.
+14. When ngAfterContentInit() is called and What it does.
+15. When ngAfterContentChecked() is called and What it does.
+16. When ngAfterViewInit() is called.
+17. When ngAfterViewChecked() is called.
+18. When ngOnDestroy() is called.
+19. Which life cycle hook handles content projection.
+20. Which life cycle hook handles custom events.
+
+
+
+**ANGULAR MATERIAL**
+  ================
+1.  What is Material in angular.
+2.  Why we are using Material in angular.
+3.  What is Component and CDK in Material.
+4.  What is the command for installing Material in our project.
+5.  What are the changes identified in a project after installing angular material.
+6.  As like Material what are the 3rd party component libraries are there.
+Ans. PrimeNG, NG-ZORRO, Nebular, Tailwind CSS
+7.  How to install and add PrimeNG component library to your angular application.
+Ans. first we need to install the PrimeNG in inside our Angular project using the below command,
+npm install primeng primeicons
+*    Then Inside angular.json file needs to add PrimeNg Theme and primeicons CSS in "styles" sectio,
+"styles": [
+  "node_modules/primeng/resources/themes/lara-light-blue/theme.css",
+  "node_modules/primeng/resources/primeng.min.css",
+  "node_modules/primeicons/primeicons.css",
+  "src/styles.css"
+]
+
+
+
+**ANGULAR PIPES**
+  =============
+1.  
 
 
 
