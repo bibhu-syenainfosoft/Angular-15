@@ -834,7 +834,7 @@ FAQ:
 
 **ANGULAR FORMS**
   =============
-1.  How many types of formas are there in Angular.
+1.  How many types of forms are there in Angular.
 
 2.  How Template driven forms works.
 3.  Template driven forms uses which design pattern.
@@ -856,7 +856,23 @@ FAQ:
 
 19. What are the benefits of Reactive Form over Template driven Form.
 20. What is the issue with FormGroup and FormControl.
+21. What is FormBuilder.
 
+
+
+**ANGULAR ROUTING**
+  ===============
+1.  What is Routing.
+2.  Angular routing is handled at which library.
+3.  How many paths are there in Routing.
+4.  What is Absolute patha and relative path.
+5.  What is Route Parameters.
+6.  Route parameters are accessed in wnother component through which service.
+7.  How the route parameters are accessed in another component.
+8.  In how many ways we can access a route parameter in another component.
+9.  What is Route Guard and what is the CLI command to create it.
+10. What is the default routing file will be created after enabling routing at the time of creating an Angular application.
+Ans. app.routing.module.ts
 
 
 
