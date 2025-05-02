@@ -903,7 +903,7 @@ Ans.Yes, ng build outputPath = folderName
 9.  Angular default path is "http://localhost:4200" can we change it.
 Ans.Yes, ng build baseHref = http://localhost:8080
 10. By default, angular stats with index page, can we change.
-Ans.Yes, ng nuild --index=login
+Ans.Yes, ng build --index=login
 11. List out come local servers.
 Ans.Tomcat, IIS [Internet information service manager], XAMPP, WAMP, MAMP
 

@@ -48,7 +48,7 @@ new:
 }
 
 Note: 
-i)  It improves readability, reduces the bundle size, bettwe performance, enhances developers experience.
+i)  It improves readability, reduces the bundle size, better performance, enhances developers experience.
 ii) <ul>
        <li *ngFor="let val of nums">{{val}}</li>
     </ul>
@@ -57,74 +57,52 @@ Here its better to use *ngFor inside <li> but not use inside <ul>, It will reduc
 iii) We cannot use 2 structural directive in a single tag.
 iv)  We can migrate our old control syntax to new syntaxes throuh the below command.
      > ng g @angular/core:control-flow
-     ? Which path in your project should be migrated?. ./     //It means entire project, we can provide some              
-                                                                specific paths.
+     ? Which path in your project should be migrated?. ./     //It means entire project, we can provide some specific paths.             
+                                                                
      ? Should the migration reformat your template? Yes
-
 
 
 
 2. Standalone Component
    ====================
-*  When we are bootstrapping the app module the other components, 3rd party libraries inside app module got  
-   downloaded when the application starts, then comes Standalone components to solve this problem and in 
-   standalone component app module got removed.
+*  When we are bootstrapping the app module the other components, 3rd party libraries inside app module got downloaded when the application starts, then comes             Standalone components to solve this problem and in standalone component app module got removed.
 
-*  After the standalone component we have component level optimization i.e if we want to load only dashboard 
-   module then all the components inside dasboard module got loaded. suppose there are 2 to 3 components 
-   inside dasboard module line by line but in the view 2 components will be shown but when the user will 
-   scroll the page at that time the other components will be loaded but not at the start time. so we can lazy 
-   load the other components, at that time DEFERRABLE VIEWS comes into picture.
+*  After the standalone component we have component level optimization i.e if we want to load only dashboard module then all the components inside dasboard module got     loaded. suppose there are 2 to 3 components inside dasboard module line by line but in the view 2 components will be shown but when the user will scroll the page at    that time the other components will be loaded but not at the start time. so we can lazy load the other components, at that time DEFERRABLE VIEWS comes into picture.
 
 
 
 3. Deferrable Views with @defer
    ============================
-*  Before when we are starting the application all the components that are downloaded which increases the 
-   loading time. Through the lazy-loading we are splitting the entire application into modules, So this lazy-
-   loading the required module will be downloaded which reduces the initial loading time of the application.
+*  Before when we are starting the application all the components that are downloaded which increases the loading time. Through the lazy-loading we are splitting the      entire application into modules, So this lazy-loading the required module will be downloaded which reduces the initial loading time of the application.
 
-*  The @defer directive is a template syntax that allows to defer loading the specific parts of our 
-   application whenever they are really needed.	
+*  The @defer directive is a template syntax that allows to defer loading the specific parts of our application whenever they are really needed.	
 
-*  The @defer will work only on standalone component if we will use it inside a non standalone component then 
-   it will load the component eagerly.
+*  The @defer will work only on standalone component if we will use it inside a non standalone component then it will load the component eagerly.
 Ex:
    @defer(){
     <compo-1>  //lazy loading
    }
    <compo-2>   //eager loading 
-*  Triggers are the events or conditions that signals angular to load the deferred contents. The triggers can 
-   be built-in or custom defined.
-*  When the trigger meets the condition and event is fired then angular fetches the deferred contents and    
-   render it into the template. This ensures that the content is loaded whenever it is required.
+*  Triggers are the events or conditions that signals angular to load the deferred contents. The triggers can be built-in or custom defined.
+*  When the trigger meets the condition and event is fired then angular fetches the deferred contents and render it into the template. This ensures that the content is    loaded whenever it is required.
 Ex:
-1. @defer(on idle){         // default one, It means the deferred component will be loaded when the browser 
-                               will be in idle state.
+1. @defer(on idle){         // default one, It means the deferred component will be loaded when the browser will be in idle state.
                              
                         
-2. @defer(on timer(3000){   // It means the defer component will be loaded after 5 seconds of initial loading. 
-3. @defer(on interaction){  // It means the defer component will be loaded when we will interact(click...) on 
-                               that component.        
+2. @defer(on timer(3000){   // It means the defer component will be loaded after 3 seconds of initial loading. 
+3. @defer(on interaction){  // It means the defer component will be loaded when we will interact(click...) on that component.        
                                         
 4. <compo-3 #app>
-   @defer(on interaction(two){ // It means the defer component will be loaded when we will click on compo-3
+   @defer(on interaction(app){ // It means the defer component will be loaded when we will click on compo-3
 
 5. <compo-3 #app>
-   @defer(on hover(app){       // It means the defer component will be loaded when we will move the cursor on 
-   @defer(on hover){              compo-3
-6. @defer(on immediate){       // It means the content will be loaded immediately regardless the browser state
- 				  When the defer content is relatively small and critical to be loaded at that   
-                                  time we will use this trigger.
-7. @defer(on viewport){        // It means the defer component will be loaded when the component will come on 
-                                  the viewport i.e when we will scroll down to that component at that time tis 
-                                  trigger will be loaded.
-8. @defer(on timer(5s);on hover){  // It means the defer content will be loaded after 5s but if we will hover 
-                                      on that component at that time immediately the content will be loaded.
-9. @defer(when isVisible){     // It means isVisible is a variable, when isVisible is true at that time the 
-                               component will be loaded, it looks like if condition but it is not like that.
-10. @defer(on interaction;on timer(5000){  // It means when we will interact/click on it then after 5s the 
-                                              component will be loaded.
+   @defer(on hover(app){       // It means the defer component will be loaded when we will move the cursor on compo-3
+   @defer(on hover){              
+6. @defer(on immediate){       // It means the content will be loaded immediately regardless the browser state, When the defer content is relatively small and critical                                   to be loaded at that time we will use this trigger.
+7. @defer(on viewport){        // It means the defer component will be loaded when the component will come on the viewport i.e when we will scroll down to that                                           component at that time this trigger will be loaded.
+8. @defer(on timer(5s);on hover){  // It means the defer content will be loaded after 5s but if we will hover on that component at that time immediately the content                                          will be loaded.
+9. @defer(when isVisible){     // It means isVisible is a variable, when isVisible is true at that time the component will be loaded, it looks like if condition but it                                   is not like that.
+10. @defer(on interaction;on timer(5000){  // It means when we will interact/click on it then after 5s the component will be loaded.
 11. @defer(){           
     <compo-1>
  }
@@ -132,11 +110,11 @@ Ex:
     <compo-2>
  }
    @loading(){          // It means the this component will be shown until the defer component will be loaded.
-   @loading(after 1s; minimum 5s){   // It means the placeholder will show after 1s spinner component will 
-    <app-spinner>                       show 5s then only defer component will be loaded.
+   @loading(after 1s; minimum 5s){   // It means the placeholder will show after 1s spinner component will show 5s then only defer component will be loaded.
+    <app-spinner>                       
  }
-   @error{              // It means when some erros occurs in loading of the defer component at that time only 
- }                     this component will be loaded, we can check it through changing the network to offline.
+   @error{              // It means when some erros occurs in loading of the defer component at that time only this component will be loaded, we can check it through                              changing the network to offline.
+ }                     
    @complete {           // It is the optional block, it will be loaded when the defer block will be loaded.
     <p>Component loaded successfully!</p>
  }
@@ -145,11 +123,11 @@ Ex:
 
 4. Hydration for SSR (Server-Side Rendering)
    =========================================
-*  SSR is a primary rendering pattern. In client side rendering if there is 5 web pages then 5 html file was getting generated but in SSR the browser dynamically generates html file bases on the user request and the complete html document was sent to the client.
+*  SSR is a primary rendering pattern. In client side rendering if there is 5 web pages then 5 html file was getting generated but in SSR the browser dynamically    generates html file bases on the user request and the complete html document was sent to the client.
 
-* The pros of SSR is faster initial time load, better SEO(Search Engine Optimization) but the cons of SSR is increases the server load time, difficult to maintain, delay in navigation and bug fixing needs the compolete deployment.
+* The pros of SSR is faster initial time load, better SEO(Search Engine Optimization) but the cons of SSR is increases the server load time, difficult to maintain,   delay in navigation and bug fixing needs the complete deployment.
 
-* in CSR except index.html file the rest js code wil be served as bundles. this js code has all the business logic  so when the business logic grows, also the size of bundles grows, so it needs additional time to gets download in the browser thats why in CSR the initial load time is more.
+* in CSR except index.html file the rest js code wil be served as bundles. this js code has all the business logic  so when the business logic grows, also the size of   bundles grow, so it needs additional time to gets download in the browser thats why in CSR the initial load time is more.
 
 * In SSR the entire html file was served in server so that the web crawler easily crawl the web page.
 
@@ -168,17 +146,17 @@ Ex:
 * To serve the application using SSR
 > npm run serve:ssr
   After this we can view the page source will all content visible.
-  After this the dist file will be generated after that our project name, inside it 2 folders, Browser and server, Inside browser we can see the client side rendering ans also we can see the js and html bundle files. Inside server folder we can see only js files becauise the html will be generated by server.
+  After this the dist file will be generated after that our project name, inside it 2 folders, Browser and server, Inside browser we can see the client side rendering    and also we can see the js and html bundle files. Inside server folder we can see only js files becauise the html will be generated by server.
 
-* "npm run prerender" Suppose we have some static pages, we will render it into client side but we need to prerender this, if we will prerender this then it enables the cache to improve the performance. Angular UNIVERSAL gives this powerful feature Prerendering.
+* "npm run prerender" Suppose we have some static pages, we will render it into client side but we need to prerender this, if we will prerender this then it enables   the cache to improve the performance. Angular UNIVERSAL gives this powerful feature Prerendering.
 
-* When we have dynamic content then we will go for Client-side rendering. When SEO is priority then we will go for Server-side-rendering. When e have more static content and SEO is prioroty at that time we will go for Prerendering.
+* When we have dynamic content then we will go for Client-side rendering. When SEO is priority then we will go for Server-side-rendering. When we have more static   content and SEO is priority at that time we will go for Prerendering.
 
-* Till Angular-17 we need to write CLI command to enable SSR. But in Angular-17 when we will create a new project at that time it will ask "Do you want to enable SSR and SSG(Static Site generation)/prerendering". If we will not enable here then later we can enable it through the CLI command "ng add @angular/ssr"
+* Till Angular-17 we need to write CLI command to enable SSR. But in Angular-17 when we will create a new project at that time it will ask "Do you want to enable SSR   and SSG(Static Site generation)/prerendering". If we will not enable here then later we can enable it through the CLI command "ng add @angular/ssr"
 
-* Hydration is the process for server rendered html into interactive, dynamic web application. Angular uses destructive hydration i.e it replaces the server rendered DOM into client rendered one.In other words app is rendered in server side then it will be rendered from scratch in the browser, it causes the flickering effect. But hydration replaces this issue.
+* Hydration is the process for server rendered html into interactive, dynamic web application. Angular uses destructive hydration i.e it replaces the server rendered   DOM into client rendered one.In other words app is rendered in server side then it will be rendered from scratch in the browser, it causes the flickering effect. But   hydration replaces this issue.
 
-* Upto angular-17 we need to import provideClientHydration in app.module.ts and also inside providers:[provideClientHydration()]. but in angular-17 it is stable and automatically loaded.
+* Upto angular-17 we need to import provideClientHydration in app.module.ts and also inside providers:[provideClientHydration()]. but in angular-17 it is stable and   automatically loaded.
 
 
 
@@ -193,7 +171,6 @@ Ex:
 
 7. Zoneless Change Detection (Experimental)
    ========================================    
-
 A move toward zone-less Angular (using signals and manual change detection) to reduce memory usage and improve performance.
 
 
